@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeArena | Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+  <header class="topbar">
+    <a class="brand" href="admin.html">
+      <span class="brand-icon">C</span> CodeArena
+    </a>
+    <span class="tag">ADMIN CONSOLE</span>
+  </header>
+
+  <main class="container">
+    <section id="adminLogin" class="login-wrap">
+      <div class="login-card">
+        <div class="eyebrow">RESTRICTED ACCESS</div>
+        <h1>Admin login<span class="accent">.</span></h1>
+        <p class="muted">Manage candidate interviews and assignments.</p>
+
+        <form id="adminLoginForm">
+          <label>Admin password</label>
+          <input id="adminPassword" type="password"
+                 placeholder="Enter demo password" required>
+          <button class="btn primary full">Sign in →</button>
+        </form>
+
+        <p class="hint">Demo password: <b>admin123</b></p>
+      </div>
+    </section>
+
+    <section id="adminDashboard" class="hidden">
+      <div class="welcome-row">
+        <div>
+          <div class="eyebrow">CONTROL CENTER</div>
+          <h1>Admin dashboard<span class="accent">.</span></h1>
+          <p class="muted">Create and assign coding interviews.</p>
+        </div>
+        <button id="adminLogout" class="btn secondary">Logout</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>Total interviews</span>
+          <strong id="adminTotal">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>In progress</span>
+          <strong id="adminActive">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Completed / expired</span>
+          <strong id="adminFinished">0</strong>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <section class="panel">
+          <div class="eyebrow">NEW ASSESSMENT</div>
+          <h2>Create interview</h2>
+          <p class="muted small">
+            Assign coding problems and their test cases to a candidate.
+          </p>
+
+          <form id="assessmentForm">
+            <label>Interview title</label>
+            <input id="assessmentTitle"
+                   placeholder="Example: DSA Interview Round 1" required>
+
+            <label>Candidate ID</label>
+            <input id="assignedCandidate"
+                   placeholder="CAND001" required>
+
+            <div class="form-row">
+              <div>
+                <label>Difficulty</label>
+                <select id="difficulty">
+                  <option>Easy</option>
+                  <option selected>Medium</option>
+                  <option>Hard</option>
+                  <option>Mixed</option>
+                </select>
+              </div>
+
+              <div>
+                <label>Time limit</label>
+                <select id="duration">
+                  <option value="30">30 minutes</option>
+                  <option value="45" selected>45 minutes</option>
+                  <option value="60">60 minutes</option>
+                  <option value="90">90 minutes</option>
+                </select>
+              </div>
+            </div>
+
+            <label>Problems and test cases</label>
+            <textarea id="problems" rows="9"
+              placeholder="Two Sum | https://leetcode.com/problems/two-sum/ | 2 7 9 11 | 9&#10;Two Sum | https://leetcode.com/problems/two-sum/ | 3 2 4 6 | 6&#10;Reverse String | https://leetcode.com/problems/reverse-string/ | hello | olleh"
+              required></textarea>
+
+            <p class="hint">
+              One test case per line. Format:<br>
+              <b>Problem name | LeetCode URL | Input | Expected output</b><br><br>
+              Repeat the same problem name and URL to add more test cases.
+              Use a Java program that reads the input and prints the expected output.
+            </p>
+
+            <button class="btn primary full" type="submit">
+              ＋ Assign interview
+            </button>
+          </form>
+
+          <div id="adminMessage" class="message hidden"></div>
+        </section>
+
+        <section class="panel">
+          <div class="eyebrow">ASSIGNMENT OVERVIEW</div>
+          <h2>All interviews</h2>
+          <div id="adminAssessmentList"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>CodeArena © 2026 · Admin workspace.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
