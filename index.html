@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeArena | Candidate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="candidate">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-icon">C</span> CodeArena</a>
+    <span class="tag">INTERVIEW PRACTICE</span>
+  </header>
+
+  <main class="container">
+    <section id="loginSection" class="login-wrap">
+      <div class="login-card">
+        <div class="eyebrow">YOUR NEXT LEVEL STARTS HERE</div>
+        <h1>Welcome back<span class="accent">.</span></h1>
+        <p class="muted">Enter your candidate ID to access your assigned interviews.</p>
+        <form id="candidateLoginForm">
+          <label>Candidate ID</label>
+          <input id="candidateId" placeholder="Example: CAND001" required>
+          <button class="btn primary full" type="submit">Access my dashboard →</button>
+        </form>
+        <p class="hint">Demo: use candidate ID <b>CAND001</b></p>
+      </div>
+    </section>
+
+    <section id="dashboardSection" class="hidden">
+      <div class="welcome-row">
+        <div>
+          <div class="eyebrow">CANDIDATE DASHBOARD</div>
+          <h1>Hello, <span id="candidateName">Candidate</span> 👋</h1>
+          <p class="muted">Your interviews. Your progress. Your growth.</p>
+        </div>
+        <button id="logoutBtn" class="btn secondary">Logout</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card"><span>Assigned</span><strong id="assignedCount">0</strong></div>
+        <div class="stat-card"><span>Completed</span><strong id="completedCount">0</strong></div>
+        <div class="stat-card"><span>In progress</span><strong id="activeCount">0</strong></div>
+      </div>
+
+      <div class="section-heading">
+        <div><div class="eyebrow">YOUR WORKSPACE</div><h2>My interviews</h2></div>
+      </div>
+      <div id="assessmentList" class="assessment-list"></div>
+      <div id="activeInterview" class="hidden"></div>
+      <div id="reportArea" class="hidden"></div>
+    </section>
+  </main>
+
+  <footer>CodeArena © 2026 · Practice with purpose.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
